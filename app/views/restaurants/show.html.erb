@@ -1,0 +1,56 @@
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+<h1 class="text-center">Editing Restaurant</h1>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @restaurant.stars %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+<p>
+  <strong>Reviews:</strong>
+  <% i=1 %>
+  <% Review.all.each do |review|%>
+  "_Review n°<%= i %>" ", Text= <%= review.content %>"
+  <% i=i+1 %>
+  <% end %>
+</p>
+
+<div class="text-center">
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
+
+<%= link_to 'Reviews', new_restaurant_review_path(@restaurant) %>
+</div>
+</div>
+</div>
+</div>
+</div>
